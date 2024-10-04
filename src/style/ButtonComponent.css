@@ -1,0 +1,29 @@
+.button {
+  display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+
+  color: #ccc;
+  font-weight: 600;
+  padding: 0.7rem 1.9rem; /* py-2 px-4 */
+  transition: background-color 0.3s ease-in-out;
+  font-size: 20px; 
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  
+
+}
+
+.button:hover {
+  transition: all 0.3s ease-out;
+  border: 1px solid #222;
+
+}
+
+.button:focus {
+  outline: none;
+  ring: 2px solid #c53030; /* focus:ring-red-500 */
+}
+
+.button-icon {
+  margin-right: 0.5rem; /* Khoảng cách giữa biểu tượng và chữ */
+}

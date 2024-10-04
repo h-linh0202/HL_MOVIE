@@ -1,0 +1,51 @@
+/* src/components/MovieList.css */
+.movie-list {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .movie-list h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .movie-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .movie-list li {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-list li:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-list img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .movie-list h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .movie-list p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+  }
+  

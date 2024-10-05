@@ -2,16 +2,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { FaRegUserCircle, FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LOGO from '../img/LOGO.png';
 
 const Header = () => {
   const [Category, SetCategory] = useState([]);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Check if mobile
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+    if (isMobile) {
+      navigate('/the-loai'); // Redirect to /the-loai on mobile
+    } else {
+      setDropdownOpen(!isDropdownOpen);
+    }
   };
 
   const handleClickOutside = (event) => {
@@ -19,6 +25,18 @@ const Header = () => {
       setDropdownOpen(false);
     }
   };
+
+  // Handle resizing to detect mobile view
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Update mobile state based on window width
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchCategory = async () => {
@@ -88,7 +106,6 @@ const Header = () => {
           >
             Phim lẻ
           </Link>
-          
 
           {/* Dropdown */}
           <div className="relative" ref={dropdownRef}>
@@ -98,8 +115,8 @@ const Header = () => {
             >
               Thể loại
             </button>
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 bg-[rgba(0,0,0,0.85)] text-white p-2 rounded-lg shadow-lg w-full md:w-96">
+            {isDropdownOpen && !isMobile && (
+              <div className="absolute right-0 mt-5 bg-[#111827] opacity-80 text-white p-2 rounded-lg shadow-lg w-full md:w-96">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                   {Category.length > 0 ? (
                     Category.map((category, index) => (
@@ -131,7 +148,6 @@ const Header = () => {
               className="ml-2 p-2 bg-transparent border-b-2 border-gray-400 focus:outline-none text-white"
             />
             <FaSearch className="text-xl cursor-pointer" />
-
           </div>
           <Link
             to="/"

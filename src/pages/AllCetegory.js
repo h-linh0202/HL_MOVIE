@@ -54,7 +54,7 @@ const AllCategory = () => {
                 {category.name}
               </div>
               {/* Tiêu đề giữa khi hover */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out text-white w-3/4 mx-auto">
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out text-white w-3/4 mx-auto text-center">
                 <h2 className="text-3xl font-semibold">{category.name}</h2>
               </div>
             </div>

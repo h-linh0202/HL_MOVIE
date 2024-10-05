@@ -32,7 +32,7 @@ const PhimBo = () => {
 
       <div className="flex pt-32 flex-col lg:flex-row">
         {/* Sidebar Component */}
-        <div className="lg:w-1/5 w-full lg:pl-5 lg:pt-10 px-4">
+        <div className="lg:w-1/5 w-full lg:pl-5 lg:pt-10 px-4 hidden lg:block">
           <SidebarComponent />
         </div>
 

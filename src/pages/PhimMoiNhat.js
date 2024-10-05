@@ -32,13 +32,13 @@ const PhimMoiNhat = () => {
 
       <div className="flex pt-32 flex-col lg:flex-row">
         {/* Sidebar Component */}
-        <div className="lg:w-1/5 w-full lg:pl-5 lg:pt-10 px-4">
+        <div className="hidden lg:block lg:w-1/5 w-full lg:pl-5 lg:pt-10 px-4 ">
           <SidebarComponent />
         </div>
 
         {/* Danh sách phim */}
         <div className="lg:w-4/5 w-full p-5">
-          <h1 className="text-3xl font-bold mb-6 uppercase">Danh Sách Phim Mới Nhất</h1>
+          <h1 className="text-3xl font-bold mb-6 uppercase hidden lg:block">Danh Sách Phim Mới Nhất</h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {
               seriesMovies.map((movie) => (
